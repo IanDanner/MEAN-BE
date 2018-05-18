@@ -1,0 +1,47 @@
+<div>
+    <h3>Edit this pet</h3>
+    <div class="error" *ngIf="name.errors">
+        <p *ngIf="name.errors.minlength">The pet name must be longer than 3 characters</p>
+        <p *ngIf="name.errors.required">The pet must have a name</p>
+    </div>
+    <div class="error" *ngIf="type.errors">
+        <p *ngIf="type.errors.minlength">The pet type must be longer than 3 characters</p>
+        <p *ngIf="type.errors.required">The pet must have a type</p>
+    </div>
+    <div class="error" *ngIf="description.errors">
+        <p *ngIf="description.errors.minlength">The pet description must be longer than 3 characters</p>
+        <p *ngIf="description.errors.required">The pet must have a description</p>
+    </div>
+    
+    <p class="error" *ngIf="errors.name">{{errors.name.message}}</p>   
+    <p class="error" *ngIf="errors.type">{{errors.type.message}}</p>   
+    <p class="error" *ngIf="errors.description">{{errors.description.message}}</p>
+    <p class="error" *ngIf="duplicate.errmsg">A pet already has this name choose another</p>
+  
+    <form (submit)="onEdit(pet)" #formData='ngForm'>
+      <p>Pet name:</p>
+      <input value="pet.name" type="text" name="name" [(ngModel)]="pet.name" required #name='ngModel' minlength="3">
+  
+      <p>Pet type:</p>
+      <input value="pet.type" type="text" name="type" [(ngModel)]="pet.type" required #type='ngModel' minlength="3">
+  
+      <p>Description:</p>
+      <input value="pet.description" type="text" name="description" [(ngModel)]="pet.description" required #description='ngModel' minlength="3">
+  
+      <p>Skills (optional):</p>
+      <ul>
+        <li>
+          <p>Skill 1: <input value="pet.skill1" type="text" name="skill1" [(ngModel)]="pet.skill1"></p>
+        </li>
+        <li>
+          <p>Skill 2: <input value="pet.skill2" type="text" name="skill2" [(ngModel)]="pet.skill2"></p>
+        </li>
+        <li>
+          <p>Skill 3: <input value="pet.skill3" type="text" name="skill3" [(ngModel)]="pet.skill3"></p>
+        </li>
+      </ul>
+  
+      <input class="formButton" type="submit" value="Edit pet" [disabled]="formData.invalid">
+      <input class="formButton" type="submit" value="Cancel" [routerLink]="['', pet._id]">   
+    </form>
+  </div>

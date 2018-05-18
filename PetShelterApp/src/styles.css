@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+a{
+    color: blue;
+    font-weight: normal;
+}
+h3, h1, p, h4{
+    line-height: 20px;
+    margin: 0;
+    margin-top: 10px;
+}
+ul{
+    list-style-type: none;
+}
+.error{
+    color: purple;
+    font-weight: bold;
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 20%;
+    height: 20px;
+    padding-left: 10px;
+}
+
+button{
+    margin: 0;
+    margin-left: 10%;
+    margin-bottom: 0.8px;
+    border-radius: 5px;
+    border: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+
+.details{
+    background: linear-gradient(#ACBDD0,#4B606C)
+}
+
+.edit{
+    background: linear-gradient(#E1D0BC,#4B606C)
+}
+.formButton{
+    margin-left: 5%;
+    width: 100px;
+    color: white;
+    font-weight: bold;
+    background: #66BBFF;
+    border: none;
+    height: 40px;
+    font-size: 20px;
+}
+
+.adoptBtn{
+    background: linear-gradient(#C3D7C7, #435A69);
+    height: 40px;
+}
+.likeBtn{
+    background: linear-gradient(#C8D7EA,#586E7F);
+    height: 40px;
+}

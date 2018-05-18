@@ -1,0 +1,30 @@
+<div *ngIf="pet.name">
+  <h3><a [routerLink]="['']">Home</a></h3>
+  <h3>Details about {{pet.name}}</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td><h3>Pet type:</h3></td>
+        <td><h4>{{pet.type}}</h4></td>
+      </tr>
+      <tr>
+        <td><h3>Pet Description:</h3></td>
+        <td><h4>{{pet.description}}</h4></td>
+      </tr>
+      <tr>
+        <td><h3>Pet Skills:</h3></td>
+        <td><h4>{{pet.skill1}}</h4>
+        <h4>{{pet.skill2}}</h4>
+        <h4>{{pet.skill3}}</h4></td>
+      </tr>
+      <tr>
+        <td><h3>Likes:</h3></td>
+        <td><h4>{{pet.likes}}</h4></td>
+      </tr>
+      <tr>
+        <td><button class="likeBtn" (click)="onLike(pet._id)" [disabled]="liked === true">Like this pet</button></td>
+        <td><button class="adoptBtn" (click)="onDelete(pet._id)">Adopt this pet!</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
